@@ -55,16 +55,17 @@ predictor=estimator.deploy(initial_instance_count=1, instance_type="ml.m5.large"
 
 you can use this function to prepare the input for the model:
 
-`
+```
 file = "data/cifar-10-batches-py/data_batch_1"
 def unpickle(file):
     import pickle
     with open(file, 'rb') as fo:
         Data = pickle.load(fo, encoding='bytes')
     return Data
+    
 Data_extracted=unpickle(file)
 data=np.reshape(Data_extracted[b'data'][0], (3, 32, 32))
-`
+```
 
 
 ![endpoint](./images/endpoint.png)
