@@ -62,7 +62,6 @@ def unpickle(file):
     with open(file, 'rb') as fo:
         Data = pickle.load(fo, encoding='bytes')
     return Data
-
 Data_extracted=unpickle(file)
 data=np.reshape(Data_extracted[b'data'][0], (3, 32, 32))
 `
